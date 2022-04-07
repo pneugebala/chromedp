@@ -227,7 +227,7 @@ func (a *ExecAllocator) Allocate(ctx context.Context, opts ...BrowserOption) (*B
 	// Chrome will sometimes fail to print the websocket, or run for a long
 	// time, without properly exiting. To avoid blocking forever in those
 	// cases, give up after twenty seconds.
-	const wsURLReadTimeout = 20 * time.Second
+	const wsURLReadTimeout = 120 * time.Second
 
 	var wsURL string
 	wsURLChan := make(chan struct{}, 1)
